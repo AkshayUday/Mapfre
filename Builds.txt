@@ -1,0 +1,10 @@
+//DEV
+ng build --base-href /car-insurance/ --deploy-url /car-insurance/ --configuration=dev --outputPath=dist/dev/car-insurance
+//SIT
+ng build --base-href /car-insurance/ --deploy-url /car-insurance/ --configuration=sit --outputPath=dist/sit/car-insurance
+//PPR
+ng build --base-href /car-insurance/ --deploy-url /car-insurance/ --configuration=ppr --outputPath=dist/ppr/car-insurance
+//PRF
+ng build --base-href /car-insurance/ --deploy-url /car-insurance/ --configuration=prf --outputPath=dist/prf/car-insurance
+//PROD
+ng build --prod --build-optimizer --base-href /car-insurance/ --deploy-url /car-insurance/ --outputPath=dist/prd/car-insurance
