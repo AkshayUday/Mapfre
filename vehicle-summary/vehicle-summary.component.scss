@@ -1,0 +1,173 @@
+.modal_txt {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Roboto;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    font-size: 12.12px;
+    letter-spacing: 2px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: 500;
+}
+
+// mat list added
+mat-list.summary-list-block {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    mat-list-item:first-child {
+        border-top: 1px solid rgba(74, 74, 74, 0.1);
+    }
+    mat-list-item {
+        margin: 0;
+        padding: 0;
+        list-style: none; // border-bottom: 1px solid #e2e2e2;
+        border-bottom: 1px solid rgba(74, 74, 74, 0.1);
+        height: 79px;
+        overflow: hidden;
+        h3 {
+            color: #8B1863;
+            font-family: Roboto;
+            font-size: 12.12px;
+            letter-spacing: 2px;
+            line-height: 16px;
+            text-transform: uppercase;
+            margin: 0;
+            text-align: left;
+        }
+        a {
+            color: #FF7F00;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.25px;
+            line-height: 16px;
+            text-align: right;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin: 0;
+        }
+    }
+    mat-list-item>div,
+    mat-list-item {
+        // background-color: #F1F5F7;
+        // padding: 17px 50px;
+        padding-top: 9%;
+        padding-bottom: 9%;
+        span.car-icon {
+            // width: 40px;
+            width: 92px;
+            max-width: 92px !important;
+            display: inline-block;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        } // span.car-icon img{
+        //     width: 100%;
+        // }
+        span.car-name {
+            h4 {
+                // width: 324px;
+                // width: 450px;
+                color: rgba(0, 0, 0, 0.87);
+                font-size: 18.2px;
+                letter-spacing: 0.32px;
+                line-height: 24px;
+                display: inline-block;
+                margin: 0 20px;
+                padding: 0;
+                text-align: left;
+                vertical-align: top;
+                font-weight: normal;
+                small {
+                    color: rgba(0, 0, 0, 0.6);
+                    font-size: 14.2px;
+                    letter-spacing: 0.25px;
+                    line-height: 20px;
+                    display: block;
+                    white-space: normal;
+                }
+            }
+        }
+        span.edit-remove {
+            // padding: 14px 0 0;
+            padding: 0;
+            vertical-align: top;
+            color: #FF7F00;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.25px;
+            line-height: 16px;
+            text-align: right;
+            display: inline-block;
+            a {
+                margin: 0 10px;
+            }
+        }
+    }
+    mat-list-item>div:hover,
+    mat-list-item:hover {
+        background-color: #fde4b9;
+    }
+}
+
+mat-list.summary-list-block mat-list-item:last-child {
+    padding: 0.8% 0;
+    height: auto;
+}
+
+mat-list.summary-list-block mat-list-item:last-child:hover {
+    background-color: transparent;
+}
+
+.max-count {
+    padding: 0px 24px;
+    margin-bottom: 0px;
+    color: #D0021B;
+    font-family: Roboto;
+    font-size: 12.12px;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+}
+
+.right-mark {
+    color: #95CB03;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    z-index: 2;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .modal_txt {
+        padding: 0 5%;
+    }
+    mat-list.summary-list-block {
+        mat-list-item {
+            height: auto;
+        }
+        mat-list-item>div,
+        mat-list-item {
+            // background-color: #F1F5F7;
+            // padding: 17px 8px;
+            padding-top: 5%;
+            padding-bottom: 5%; // .mat-list-item-content{
+            //     display: block !important;
+            // }
+            span.car-name {
+                word-break: break-word;
+                word-wrap: break-word;
+                white-space: normal;
+                h4 {
+                    margin: 0 10px;
+                    small {
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
+}

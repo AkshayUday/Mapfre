@@ -1,0 +1,365 @@
+.quick-quote{
+    // *{
+    //     margin: 0;
+    //     padding: 0;
+    // }
+    
+
+    .call-us-to-finish-yo {	
+       
+        color: rgba(0,0,0,0.87);
+        font-family: Roboto;
+        font-size: 12.12px;
+        letter-spacing: 2px;
+        line-height: 16px;
+        text-align: center;
+    }
+
+    .call-verti {
+        color: #777770;
+        font-size: 18.2px;
+        font-weight: 500;
+        color: #8B1863;
+        letter-spacing: 0.15px;
+        line-height: 24px;
+        margin: 0em 0 0.5em;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .cmbWalmeric {
+        text-align: center;
+    }
+    .title{
+        color: #8B1863;
+        font-family: Roboto;
+        font-size: 24px;
+        letter-spacing: 0.16px;
+        line-height: 32px;
+        text-align: center;
+        font-weight: normal;
+        margin-top: 32px;
+    }
+    .quote-price{
+        color: #8B1863;
+        font-family: Roboto;
+        // text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        font-weight: normal;
+       
+        .dollar{
+            // height: 39px;
+            // width: 17px;
+            color: #8B1863;
+            font-family: Roboto;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: -0.46px;
+            line-height: 30px;
+            text-align: right;
+            margin-top: 15px;
+        }
+        .amount{
+            // height: 79px;
+            // width: 99px;
+            color: #8B1863;
+            font-family: Roboto;
+            font-size: 60px;
+            letter-spacing: -0.93px;
+            line-height: 79px;
+            text-align: right;
+        }
+        .decimal{
+            // height: 39px;
+            // width: 42px;
+            color: #8B1863;
+            font-family: Roboto;
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: -0.46px;
+            // line-height: 39px;
+            line-height: 28px;
+            text-align: right;
+            margin-top: 14px;
+        }
+        .month {
+            // height: 30px;
+            // width: 40px;
+            color: #8B1863;
+            font-family: Roboto;
+            font-size: 22.5px;
+            font-weight: bold;
+            letter-spacing: -0.35px;
+            // line-height: 30px;
+            line-height: 20px;
+            display: block;
+        }
+    }
+    .estimates {
+        // height: 16px;
+        // width: 486px;
+        font-weight: bold;
+        color: rgba(0,0,0,0.6);
+        font-family: Roboto;
+        font-size: 12.12px;
+        letter-spacing: 0.4px;
+        line-height: 16px;
+        text-align: center;
+        // text-transform: uppercase;
+    }
+    .affix-top, .para, .para2{
+        padding: 0 16px;
+    }
+    .sticky {
+        background: #fff;
+        // box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.13);
+        position: fixed;
+        top: 72px;
+        height: 118px;
+        // width: 100%;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        transition: 2s;
+        .estimates {
+            font-size: 12.12px;
+            text-align: left;
+            .estimates-span{
+                display: block;
+            }
+        }
+        .quote-price{
+            color: #8B1863;
+            margin-top: 0;
+            .dollar{
+                font-size: 21.29px;
+                margin-top: 0;
+                line-height: 1;
+            }
+            .amount{
+                font-size: 42.59px;
+                margin-top: 0; 
+                line-height: 1;
+            }
+            .decimal{
+                font-size: 21.29px;
+                margin-top: 0; 
+                line-height: 1;
+            }
+            .month {
+                font-size: 15.96px;
+                margin-top: 0; 
+                line-height: 1;
+            }
+        }
+        
+    }
+    .mobile-view-content{
+        display: flex;
+        flex-direction: row;
+        padding: 8px 16px;
+        justify-content: space-between;
+    }
+    // .primary-button {
+    //     height: 48px;
+    //     width: 300px;
+    //     background-color: #FFA100;
+    // }
+    .whats-covered {
+        // height: 24px;
+        // width: 486px;
+        color: #8B1863;
+        font-family: Roboto;
+        font-size: 18.2px;
+        letter-spacing: 0.32px;
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .para, .para2 {
+        // height: 32px;
+        // width: 486px;
+        color: rgba(0,0,0,0.6);
+        font-family: Roboto;
+        font-size: 12.12px;
+        letter-spacing: 2px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .para2 {
+        letter-spacing: 0.4px;
+        text-transform: none;
+    }
+    // mat list added
+    mat-list.quick-quote-mat-list{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        // height: 400px;
+        // overflow-y: scroll;
+        mat-list-item:first-child{
+            border-top: 1px solid  rgba(74, 74, 74, 0.1);
+            margin-top: 16px;
+        }
+        mat-list-item{
+            margin: 0;
+            padding: 0;
+            list-style: none;        
+            // border-bottom: 1px solid #e2e2e2;
+            border-bottom:1px solid rgba(74, 74, 74, 0.1);
+            .mat-list-title{
+                // height: 24px;
+                // width: 388px;
+                color: rgba(0,0,0,0.87);
+                font-family: Roboto;
+                font-size: 18.2px;
+                letter-spacing: 0.32px;
+                line-height: 24px;
+            }
+            .mat-list-para{
+                // height: 24px;
+                // width: 388px;
+                color: rgba(0,0,0,0.6);
+                font-family: Roboto;
+                font-size: 14.2px;
+                letter-spacing: 0.25px;
+                line-height: 20px;
+            }
+            .policy-icon{
+                width: 56px;
+                max-width: 56px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: stretch;
+                // img{
+                //     // width: 100%;
+                // }
+            }
+            // .vehicle-icon{
+            //     width: 56px;
+            //     max-width: 56px;
+            //     text-align: center;
+            //     img{
+            //         width: 100%;
+            //     }
+            // }
+            // .user-icon{
+            //     width: 56px;
+            //     max-width: 56px;
+            //     text-align: center;
+            //     img{
+            //         width: 60%;
+            //     }
+            // }
+        }
+        mat-list-item:last-child{
+            margin-bottom: 8px;
+        }
+    }
+
+
+    // .walmeric-input {
+    //     height: 56px; // padding: 0 10px;
+    //     border: 1px solid rgba(118, 119, 122, 0.87);
+    //     border-radius: 4px;
+    //      width: 72% ;
+    //     margin: 0;
+    //     padding-left: 4%;
+    //     color: #000000;
+    //     font-size: 16px;
+    //     font-weight: bold;
+    //     letter-spacing: 0.15px;
+    // }
+.callmeback{
+    height: 48px;
+    width: 280px;
+    color: #ffffff;
+    font-size: 14.14px;
+    font-weight: 500;
+    letter-spacing: 1.43px;
+    line-height: 16px;
+    text-align: center;
+    background-color: #4A4A4A;
+    border: none;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 25px;
+
+}
+
+    .call-verti {
+        color: #8B1863;
+        font-family: Roboto;
+        font-size: 18.2px;
+        letter-spacing: 0.32px;
+        line-height: 24px;
+        text-align: center;
+    }
+    @media only screen and (max-width: 767px) {
+        .sticky {
+            top: 64px;
+        }
+    }
+    
+
+}
+
+.walmeric-input {
+    height: 56px; // padding: 0 10px;
+    border: 1px solid rgba(118, 119, 122, 0.87);
+    border-radius: 4px;
+    width: 100%; // margin: 0.4em 0;
+    max-width: 328px; // border: none;
+    margin: 0 auto;
+    padding-left: 4%;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.15px;
+    box-sizing: border-box;
+}
+.wg-error{
+    max-width: 328px;
+    margin: 0 auto;
+}
+
+a.drp-phone {
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+	color: #FFFFFF;
+	letter-spacing: 1.25px;
+	line-height: 16px;
+	text-align: center;
+}
+.callme-btn {
+    // height: 36px;
+    width: 100%;
+    max-width: 300px; // border: none;
+    border: 1px solid #FF7F00; // border-radius: 4px;
+    background-color: #ffffff;
+    color: #FF7F00;
+    margin-top: 44px;
+    cursor: pointer;
+    height: 48px;
+    border-radius: 24px;
+    line-height: 48px;
+    box-sizing: border-box;
+}
+
+.callme-btn.disabled {
+    // background-color:#D7DBDC;
+    color: rgba(0, 0, 0, 0.38);
+    pointer-events: none;
+    border: 1px solid rgba(0, 0, 0, 0.12); // border-color:rgba(0,0,0,0.38); 
+}

@@ -1,0 +1,10 @@
+<verti-back-button></verti-back-button>
+<div class="main-content">
+  <div class="inner-content">
+    <div class="no-back-img-title">
+      <verti-page-image-title class="split-sentences" [imgsource]="imgSource" [title]="title"></verti-page-image-title>
+    </div>
+
+    <verti-user-form [formGroup]="profileForm" (formGroupValue)='saveDetails($event)' fxLayout="column" [isADPFQuote]='isADPFQuote'></verti-user-form>
+  </div>
+</div>

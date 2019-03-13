@@ -1,0 +1,31 @@
+.ko-decline{
+    .card-para{
+        color: rgba(0,0,0,0.6);
+        font-size: 14.2px;
+        letter-spacing: 0.25px;
+        line-height: 20px;
+        text-align: center;
+        margin-top: 1.7em;
+        font-weight: 450;
+        a{
+            text-decoration: underline;
+            color: #ffa100
+        }
+    }
+    .ko-decline-subtitle{
+        color: #8b1863;
+        font-size: 0.7575em;
+        letter-spacing: 0.5px;
+        line-height: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 8px 0 0;
+        font-weight: 400;
+    }
+}
+
+::ng-deep {
+    .mat-card-title {
+        margin-bottom: 0px !important;
+    }
+}

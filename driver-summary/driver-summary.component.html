@@ -1,0 +1,67 @@
+<verti-back-button></verti-back-button>
+<!-- <div class="main-content"> -->
+<div class="summary-container">
+    <div class="inner-content">
+        <verti-page-image-title [title]="title"></verti-page-image-title>
+        <!-- <form [formGroup]="driverForm" (ngSubmit)="saveDetails()" fxLayout="column"> -->
+        <section fxLayout="column">
+            <p class="modal_txt">All drivers in your household need to be included.</p>
+            <mat-list class="summary-list-block driver-summary" fxLayout="column" fxFlex="100">
+                <ng-template ngFor let-driver [ngForOf]="driverData" [ngForTrackBy]="trackByFn">
+                    <mat-list-item [ngClass]="{'not-included-list': !driver.isIncluded}" fxLayout="column" fxFlex="100">
+                        <!-- <div class="mobile-screen"> -->
+                        <span class="car-icon" matListAvatar fxFlex="10">
+                            <mat-icon *ngIf="driver.isIncluded" class="right-mark">check_circle</mat-icon>
+                            <img class="car-position" [src]="driver.genderImg">
+                        </span>
+                        <span class="car-name" fxFlex="66">
+                            <h4>
+                                {{driver.firstName}} {{driver.lastName}}
+                                <small matLine>{{driver.age}} year old {{driver.genderCode}}</small>
+                            </h4>
+                        </span>
+                        <!-- </div> -->
+                        <ng-container *ngIf="driver.isPNI; else nonPolicyHolder">
+                            <span class="pni-holder" fxFlex="24">
+                                <a href="javascript:void(0);">You</a>
+                            </span>
+                        </ng-container>
+                        <ng-template #nonPolicyHolder>
+                            <ng-container *ngIf="driver.isIncluded; else notIncluded">
+                                <span class="edit-remove orange-theme" fxFlex="24">
+                                    <!-- <a href="javascript:void(0);" (click)="editDriver(driver)">EDIT</a>
+                                    <a href="javascript:void(0);" (click)="removeDriver(driver.driverID)">REMOVE DRIVER</a> -->
+                                    <button mat-icon-button color="primary" (click)="editDriver(driver)">
+                                        <mat-icon class="outline-edit">edit</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="primary" (click)="removeDriver(driver.driverID)">
+                                        <mat-icon>close</mat-icon>
+                                    </button>
+                                </span>
+                            </ng-container>
+                        </ng-template>
+
+                        <ng-template #notIncluded>
+                            <span class="edit-remove orange-theme" fxFlex="24">
+                                <!-- <a href="javascript:void(0);" [ngClass]="{ 'max-limit' : maxDriverLimit}" (click)="addDriverBack(driver)">ADD DRIVER</a> -->
+                                <button mat-icon-button color="primary" [ngClass]="{ 'max-limit' : maxDriverLimit}" (click)="addDriverBack(driver)">
+                                    <mat-icon>add_circle_outline</mat-icon>
+                                </button>
+                            </span>
+                        </ng-template>
+                    </mat-list-item>
+                </ng-template>
+                <mat-list-item>
+                    <button mat-button [disabled]="maxDriverLimit" (click)="addDriver()" color="primary" class="add-summary-button">
+                        Add a driver
+                        <mat-icon>add_circle_outline</mat-icon>
+                    </button>
+                </mat-list-item>
+            </mat-list>
+            <p *ngIf="maxDriverLimit" class="driver-limit-msg">We allow a maximum of 4 drivers per quote online. Please call us at 1-844-448-3784 if you need to add more.</p>
+            <div fxLayout="column" fxLayoutAlign="center center" class="next-button">
+                <button mat-raised-button class="primary-button" (click)="saveDetails()" color="primary">NEXT</button>
+            </div>
+        </section>
+    </div>
+</div>

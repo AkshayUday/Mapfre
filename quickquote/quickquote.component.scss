@@ -1,0 +1,185 @@
+.quick-quote{
+    font-family: Roboto;
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }    
+    .title{
+        color: #8B1863;
+        font-size: 24px;
+        letter-spacing: 0.16px;
+        line-height: 32px;
+        text-align: center;
+        font-weight: normal;
+    }
+    .quote-price{
+        color: #8B1863;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        font-weight: normal;
+        margin-top: 8px;
+        text-align: left;
+        .dollar{
+            color: #8B1863;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: -0.46px;
+            line-height: 30px;
+            margin-top: 15px;
+        }
+        .amount{
+            color: #8B1863;
+            font-size: 60px;
+            letter-spacing: -0.93px;
+            line-height: 79px;
+        }
+        .decimal{
+            color: #8B1863;
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: -0.46px;
+            line-height: 28px;
+            margin-top: 14px;
+        }
+        .month {
+            color: #8B1863;
+            font-size: 22.5px;
+            font-weight: bold;
+            letter-spacing: -0.35px;
+            line-height: 20px;
+            display: block;
+        }
+    }
+    .estimates {
+        color: rgba(0,0,0,0.87);
+        font-size: 12.12px;
+        letter-spacing: 2px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .affix-top, .para, .para2{
+        padding: 0 16px;
+    }
+    .sticky {
+        background: #fff;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.13);
+        position: fixed;
+        top: 72px;
+        height: 118px;
+        // width: 100%;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        transition: 2s;
+        .estimates {
+            font-size: 12.12px;
+            text-align: left;
+            .estimates-span{
+                display: block;
+            }
+        }
+        .quote-price{
+            color: #8B1863;
+            margin-top: 0;
+            .dollar{
+                font-size: 21.29px;
+                margin-top: 0;
+                line-height: 1;
+            }
+            .amount{
+                font-size: 42.59px;
+                margin-top: 0; 
+                line-height: 1;
+            }
+            .decimal{
+                font-size: 21.29px;
+                margin-top: 0; 
+                line-height: 1;
+            }
+            .month {
+                font-size: 15.96px;
+                margin-top: 0; 
+                line-height: 1;
+            }
+        }
+    }
+    .mobile-view-content{
+        display: flex;
+        flex-direction: row;
+        padding: 8px 16px;
+        justify-content: space-between;
+    }
+    .whats-covered {
+        color: #8B1863;
+        font-size: 18.2px;
+        letter-spacing: 0.32px;
+        line-height: 24px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .para, .para2 {
+        color: rgba(0,0,0,0.6);
+        font-size: 12.12px;
+        letter-spacing: 2px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .para2 {
+        letter-spacing: 0.4px;
+        text-transform: none;
+    }
+    // mat list added
+    mat-list.quick-quote-mat-list{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        mat-list-item:first-child{
+            border-top: 1px solid  rgba(74, 74, 74, 0.1);
+            margin-top: 16px;
+        }
+        mat-list-item{
+            margin: 0;
+            padding: 0;
+            list-style: none;        
+            border-bottom:1px solid rgba(74, 74, 74, 0.1);
+            .mat-list-title{
+                color: rgba(0,0,0,0.87);
+                font-size: 18.2px;
+                letter-spacing: 0.32px;
+                line-height: 24px;
+            }
+            .mat-list-para{
+                color: rgba(0,0,0,0.6);
+                font-size: 14.2px;
+                letter-spacing: 0.25px;
+                line-height: 20px;
+            }
+            .policy-icon{
+                width: 56px;
+                max-width: 56px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: stretch;
+            }
+        }
+        mat-list-item:last-child{
+            margin-bottom: 8px;
+        }
+    }
+    .sticky-next-coverage{
+        // margin-top: 200px;
+        margin-top: 160px;
+    }
+    @media only screen and (max-width: 767px) {
+        .sticky {
+            top: 64px;
+        }
+    } 
+
+}

@@ -1,0 +1,98 @@
+<verti-back-button></verti-back-button>
+<div class="summary-container">
+  <div class="inner-content">
+    <verti-page-image-title [title]="title"></verti-page-image-title>
+
+    <form fxLayout="column">
+      <!-- <p class="modal_txt" *ngIf="!showAtleastMsg">Add at least one vehicle to proceed.</p> -->
+      <p class="modal_txt" *ngIf="!showAtleastMsg">We didn’t find any vehicles listed at your address. Please enter your vehicle’s info.</p>
+      <p class="modal_txt" *ngIf="showAtleastMsg">We found some vehicles associated with your address.</p>
+
+      <mat-list class="summary-list-block" fxLayout="column" fxFlex="100">
+        <ng-template ngFor let-vehicle [ngForOf]="vehicleData">
+          <ng-container *ngIf="vehicle.isADPF; else nonAdpfSec;">
+            <!-- <mat-list-item *ngIf="vehicle.model && vehicle.make && vehicle.year > 1980 && vehicle.vinPrefix.length == 17" [ngClass]="{'not-included-list': !vehicle.isIncluded}" -->
+            <mat-list-item [ngClass]="{'not-included-list': !vehicle.isIncluded}" fxLayout="column" fxFlex="100">
+              <span class="car-icon" matListAvatar fxFlex="20">
+                <mat-icon *ngIf="vehicle.isIncluded" class="right-mark">check_circle</mat-icon>
+                <ng-container *ngIf="vehicle.iconExisted; else noIcon">
+                  <img class="car-position" src="./assets/img/{{vehicle.bodyStyleCode}}.svg">
+                </ng-container>
+                <ng-template #noIcon>
+                  <img class="car-position" src="./assets/img/SD.svg">
+                </ng-template>
+              </span>
+              <span class="car-name" fxFlex="56">
+                <h4>{{vehicle.year}} {{vehicle.make}}
+                  <small matLine *ngIf="vehicle.isADPF">{{vehicle.model}}, {{vehicle.vinPrefix}}</small>
+                  <!-- <small matLine *ngIf="!vehicle.isADPF">{{vehicle.model}}, {{vehicle.trim}}</small> -->
+                </h4>
+              </span>
+              <span class="edit-remove orange-theme" *ngIf="vehicle.isIncluded; else notIncluded" fxFlex="24">
+                <!-- <button mat-icon-button color="primary" *ngIf="!vehicle.isADPF" (click)="edit(vehicle.vehicleID)">
+                  <mat-icon class="outline-edit">edit</mat-icon>
+                </button> -->
+                <button mat-icon-button color="primary" (click)="remove(vehicle.vehicleID)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </span>
+              <ng-template #notIncluded>
+                <span class="edit-remove orange-theme" fxFlex="24">
+                  <button mat-icon-button [disabled]="maxVehicleLimit" (click)="addThisVehicle(vehicle.vehicleID)" color="primary">
+                    <mat-icon>add_circle_outline</mat-icon>
+                  </button>
+                </span>
+              </ng-template>
+            </mat-list-item>
+          </ng-container>
+          <ng-template #nonAdpfSec>
+            <mat-list-item *ngIf="vehicle && vehicle.model && vehicle.make" [ngClass]="{'not-included-list': !vehicle.isIncluded}" fxLayout="column"
+              fxFlex="100">
+              <span class="car-icon" matListAvatar fxFlex="20">
+                <mat-icon *ngIf="vehicle.isIncluded" class="right-mark">check_circle</mat-icon>
+                <ng-container *ngIf="vehicle.iconExisted; else noIcon">
+                  <img class="car-position" src="./assets/img/{{vehicle.bodyStyleCode}}.svg">
+                </ng-container>
+                <ng-template #noIcon>
+                  <img class="car-position" src="./assets/img/SD.svg">
+                </ng-template>
+              </span>
+              <span class="car-name" fxFlex="56">
+                <h4>{{vehicle.year}} {{vehicle.make}}
+                  <!-- <small matLine *ngIf="vehicle.isADPF">{{vehicle.model}}, {{vehicle.vinPrefix}}</small> -->
+                  <small matLine *ngIf="!vehicle.isADPF">{{vehicle.model}}, {{vehicle.trim}}</small>
+                </h4>
+              </span>
+              <span class="edit-remove orange-theme" *ngIf="vehicle.isIncluded; else notIncluded" fxFlex="24">
+                <button mat-icon-button color="primary" *ngIf="!vehicle.isADPF" (click)="edit(vehicle.vehicleID)">
+                  <mat-icon class="outline-edit">edit</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="remove(vehicle.vehicleID)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </span>
+              <ng-template #notIncluded>
+                <span class="edit-remove orange-theme" fxFlex="24">
+                  <button mat-icon-button [disabled]="maxVehicleLimit" (click)="addThisVehicle(vehicle.vehicleID)" color="primary">
+                    <mat-icon>add_circle_outline</mat-icon>
+                  </button>
+                </span>
+              </ng-template>
+            </mat-list-item>
+          </ng-template>
+        </ng-template>
+        <mat-list-item>
+          <button mat-button [disabled]="maxVehicleLimit" (click)="addNewVehicle()" color="primary" class="add-summary-button">
+            Add another vehicle
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+      <p *ngIf="maxVehicleLimit" class="max-count">We allow a maximum of 4 vehicles per quote online. Please call us at 1-844-448-3784 if you need to add more. </p>
+
+      <div *ngIf="vehicleData && vehicleData.length" fxLayout="column" fxLayoutAlign="center center" class="next-button">
+        <button [disabled]="disabledNextBtn" mat-raised-button class="primary-button" (click)="saveDetails()" color="primary">Next</button>
+      </div>
+    </form>
+  </div>
+</div>

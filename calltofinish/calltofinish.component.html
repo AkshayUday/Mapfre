@@ -1,0 +1,94 @@
+<div class="main-content">
+  <div class="quick-quote">
+    <!-- <section class="affix-top" id="affix" *ngIf="showScrollContent; else showNormalContent"> -->
+
+    <!-- <div *ngIf="isWorkingHours"> -->
+    <section class="affix-top" id="affix">
+      <div class="title">{{leadData.firstName}}, buy with confidence.</div>
+      <div class="quote-price">
+        <span class="dollar">$</span>
+        <span class="amount">{{premuimPrice}}</span>
+        <span class="decimal">.{{decimalPrice}}
+          <span class="month">/mo</span>
+        </span>
+      </div>
+      <div class="estimates">Price estimate based on a 6-month term.</div>
+      <h6 class="call-us-to-finish-yo mrtp24 mrbt32">CALL US TO FINISH YOUR QUOTE WITH A LICENSED AGENT TO MAXIMIZE YOUR COVERAGE AND DISCOUNTS.</h6>
+
+
+
+      <div *ngIf="isWorkingHours" fxLayout="row wrap" fxLayoutAlign="center center" class="call-now-button-wrapper mrbt32">
+        <button mat-raised-button class="primary-button" color="primary">
+          CALL US NOW
+          <div>
+            <a class="drp-phone" href="tel:1-215-608-1547">1-215-608-1547</a>
+          </div>
+        </button>
+      </div>
+      <div class="call-verti">
+        <div *ngIf="isWorkingHours">-OR-</div>
+        Leave your number, we'll call you back.</div>
+
+
+      <form class="cmbWalmeric">
+        <input class="walmeric-input" type="text" name="phone" minlength="10" maxlength="10" placeholder="Your phone number" />
+        <button type="submit" class="mat-stroked-button callme-btn">CALL ME BACK</button>
+      </form>
+
+    </section>
+    <!-- </div> -->
+
+
+
+    <!-- <div *ngIf="!isWorkingHours">
+    <section class="affix-top" id="affix">
+      <h3 class="title">fName,buy with
+        <br>confidence.</h3>
+      <h2 class="quote-price">
+        <span class="dollar">$</span>
+        <span class="amount">123</span>
+        <span class="decimal">.99
+          <span class="month">/mo</span>
+        </span>
+      </h2>
+      <h6 class="estimates">Price Estimate based on 6-month term.</h6>
+      <br>
+      <br>
+      <h6 class=" call-us-to-finish-yo">CALL US TO FINISH YOUR QUOTE WITH A
+        <br>LICENSED AGENT TO MAXIMIZE YOUR
+        <br>COVERAGE AND DISCOUNTS.</h6>
+      <br>
+      <span class="call-verti">Leave your phone number, we'll call you back.</span>
+
+      <form [formGroup]="contactForm" (ngSubmit)="saveDetails()" fxLayout="column">
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone number</mat-label>
+
+          <input type="tel" minlength="10" maxlength="12" matInput (blur)="onBlur($event)" (input)=onKey($event) placeholder="eg. 555-123-4567"
+            (input)="formatPhoneNumber('phoneNumber')" formControlName="phoneNumber" required>
+          <mat-error *ngIf="mobileFormInvalid">
+            It doesn't look like that is a valid phone number, want to try again?
+          </mat-error>
+        </mat-form-field>
+
+        <div fxLayout="row wrap" fxLayoutAlign="center center" class="next-button">
+          <button mat-raised-button class="primary-button" [disabled]="!contactForm.valid" color="primary">
+            Call Me Back
+
+          </button>
+        </div>
+
+      </form>
+    </section>
+    </div>  -->
+
+
+
+
+
+
+
+
+  </div>
+</div>

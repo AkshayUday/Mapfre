@@ -1,0 +1,92 @@
+<verti-back-button></verti-back-button>
+<div class="main-content">
+  <div class="quick-quote" *ngIf="leadData">
+    <ng-container *ngIf="showScrollContent; else showNormalContent">
+      <header class="affix-top sticky" id="affix">
+        <div class="mobile-view-content">
+          <h6 class="estimates">Estimate for a
+            <span class="estimates-span">6-month term.</span>
+          </h6>
+          <h2 class="quote-price">
+            <span class="dollar">$</span>
+            <span class="amount">{{premuimPrice}}</span>
+            <span class="decimal">.{{decimalPrice}}
+              <span class="month">/mo</span>
+            </span>
+          </h2>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="fnext-button" (click)="doContinue()">
+          <button mat-raised-button class="primary-button" (click)="doContinue()" color="primary">continue</button>
+        </div>
+      </header>
+    </ng-container>
+    <ng-template #showNormalContent>
+      <header class="affix-top" id="affix">
+        <h3 class="title">{{leadData.firstName}}, here's your quote estimate:</h3>
+        <h2 class="quote-price">
+          <span class="dollar">$</span>
+          <span class="amount">{{premuimPrice}}</span>
+          <span class="decimal">.{{decimalPrice}}
+            <span class="month">/mo</span>
+          </span>
+        </h2>
+        <h6 class="estimates">Estimate for a 6-month term.</h6>
+        <div fxLayout="column" fxLayoutAlign="center center" class="mrtp32 mrbt40 fnext-button" (click)="doContinue()">
+          <button mat-raised-button class="primary-button" color="primary">continue</button>
+        </div>
+      </header>
+    </ng-template>
+
+    <div class="inner-content">
+      <main id="sticky_next_coverage">
+        <h3 class="whats-covered">What’s covered:</h3>
+        <p class="para">Customize coverages and refine your options in the next few steps.</p>
+
+        <mat-list class="quick-quote-mat-list">
+          <mat-list-item>
+            <span class="policy-icon" matListAvatar>
+              <img src="./assets/img/Icon_Shield.svg" alt="quick quote">
+            </span>
+            <h3 class="mat-list-title" matLine> Policy Coverage </h3>
+            <p class="mat-list-para" matLine> Bodily Injury: {{leadData.quickQuote.bILimit}} </p>
+            <p class="mat-list-para" matLine> Property Damage: {{leadData.quickQuote.pDLimit}} </p>
+          </mat-list-item>
+
+          <ng-template ngFor let-vehicle [ngForOf]="vehicleData">
+            <ng-container *ngIf="vehicle.isIncluded">
+              <mat-list-item>
+                <!-- <span class="policy-icon" matListAvatar>
+                  <img src="./assets/img/SD.svg" alt="quick quote">
+                </span> -->
+                <span class="policy-icon" matListAvatar>
+                  <ng-container *ngIf="vehicle.iconExisted; else noIcon">
+                    <img class="car-position" src="./assets/img/{{vehicle.bodyStyleCode}}.svg">
+                  </ng-container>
+                  <ng-template #noIcon>
+                    <img class="car-position" src="./assets/img/SD.svg">
+                  </ng-template>
+                </span>
+                <h3 class="mat-list-title" matLine>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} </h3>
+                <p class="mat-list-para" matLine> Collision: {{leadData.quickQuote.collDeductible}} </p>
+                <p class="mat-list-para" matLine> Comprehensive: {{leadData.quickQuote.compDeductible}} </p>
+              </mat-list-item>
+            </ng-container>
+          </ng-template>
+
+          <ng-template ngFor let-driver [ngForOf]="leadData.quickQuote.drivers">
+            <ng-container *ngIf="driver.isIncluded">
+              <mat-list-item>
+                <span class="policy-icon" matListAvatar>
+                  <img src="./assets/img/undefined-1.svg" alt="quick quote">
+                </span>
+                <h3 class="mat-list-title" matLine>{{driver.firstName}} {{driver.lastName}}</h3>
+                <p class="mat-list-para" matLine>{{driver.age}} year old {{driver.genderCode === 'M' ? 'male' : 'female'}}</p>
+              </mat-list-item>
+            </ng-container>
+          </ng-template>
+        </mat-list>
+        <p class="para2">Price estimate is based on your information and certain assumptions about your circumstances.</p>
+      </main>
+    </div>
+  </div>
+</div>

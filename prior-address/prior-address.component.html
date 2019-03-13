@@ -1,0 +1,68 @@
+<verti-back-button></verti-back-button>
+<div class="main-content">
+  <div class="inner-content">
+    <verti-page-image-title [imgsource]="imgSource" [title]="title"></verti-page-image-title>
+    <form [formGroup]="previousAddressForm" (ngSubmit)="saveDetails()" fxLayout="column">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Street address</mat-label>
+        <input matInput [placeholder]="placeHolder" formControlName="addressLine1" [matAutocomplete]="auto" (input)="primaryAddressInput()"
+          maxlength="250" (blur)="checkAddress1Validity()" [readonly]='isADPFQuote'>
+        <mat-hint class="mat-error" *ngIf="invalidAddress1">
+          PO Box can't be used to get a quote.
+        </mat-hint>
+        <mat-hint class="mat-error" *ngIf="addressSuggestionSelected && !predictionSelected && !invalidAddress1">
+          Looks like part of your street address is missing, want to try again?
+        </mat-hint>
+        <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption="true">
+          <div class="zero-results-header" *ngIf="zeroResults && !cantFindAddress">
+            We can't find that address
+          </div>
+          <mat-option class="google-predictions" [ngClass]="{'zero-results' : zeroResults}" (onSelectionChange)="prefillAddressDetails(data)"
+            *ngFor="let data of googleSuggestions" [value]="data.description">
+            {{data.description}}
+          </mat-option>
+          <mat-option *ngIf="googleSuggestions?.length" class="powered-by-google" [disabled]="true">
+            <img src="./assets/img/powered_by_google_on_white.png" />
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Apt # (optional)</mat-label>
+        <input matInput placeholder="Apt # (optional)" formControlName="addressLine2" minlength="1" maxlength="250" [readonly]='isADPFQuote'>
+      </mat-form-field>
+      <div class="manual-address" fxLayout="column" *ngIf="cantFindAddress">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Zip code</mat-label>
+          <input matInput type="tel" #zip placeholder="Zip Code" minlength="5" maxlength="5" formControlName="postalCode" (input)="allowOnlyNumbers('postalCode')">
+          <mat-hint class="city-and-state">{{cityAndState}}</mat-hint>
+          <mat-error *ngIf="previousAddressForm?.controls['postalCode']?.hasError('required')">
+            This zip code does not exist
+          </mat-error>
+        </mat-form-field>
+        <div class="" fxLayout="column" *ngIf="showCityState">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Select City</mat-label>
+            <mat-select #city placeholder="Select City" formControlName="city">
+              <mat-option *ngFor="let city of citiesData" [value]="city.cityName">
+                {{city?.cityName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Select State</mat-label>
+            <mat-select placeholder="Select State" formControlName="state">
+              <mat-option *ngFor="let state of statesData;" [value]="state.stateCode">
+                {{state?.stateCode}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row wrap" fxLayoutAlign="center center" class="next-button">
+        <button mat-raised-button class="primary-button" [disabled]="!previousAddressForm.valid || !predictionSelected || invalidAddress1"
+          color="primary">Next</button>
+      </div>
+    </form>
+  </div>
+</div>

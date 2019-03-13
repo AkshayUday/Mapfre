@@ -1,0 +1,25 @@
+<verti-back-button></verti-back-button>
+<div class="main-content">
+    <div class="inner-content">
+        <mat-card-title class="card-title">In the past 3 years…</mat-card-title>
+        <form [formGroup]="minorViolation" fxLayout="column">
+            <div class="violations-div">
+                <div class="violation-div" *ngFor="let violation of allViolationsList" fxLayout="column">
+                    <verti-ko-questions-lists [koSubTitleData]="violation.subtitle" [koListTitleData]="violation.listTitle"
+                        [koListData]="violation.list"></verti-ko-questions-lists>
+
+                    <mat-button-toggle-group class="no-box-shadow answer-toggle-group" (click)="saveQuestion()" color="primary"
+                        [formControlName]="violation.formControl" aria-label="Font Style">
+                        <mat-button-toggle class="left-curved-toggle" value="none">None</mat-button-toggle>
+                        <mat-button-toggle class="no-curved-toggle" value="1">1</mat-button-toggle>
+                        <mat-button-toggle class="no-curved-toggle" value="2">2</mat-button-toggle>
+                        <mat-button-toggle class="right-curved-toggle" value="3plus">3+</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="center center" class="next-button button-wrapper">
+                <button mat-raised-button class="primary-button" (click)="nextQuestion()" color="primary">Next</button>
+            </div>
+        </form>
+    </div>
+</div>
