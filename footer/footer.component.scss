@@ -1,0 +1,102 @@
+.footer-wrapper {
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .skyline_art_pittsburgh_div {
+        position: relative;
+        width: 100%;
+        height: 131px;
+
+        .skyline_art_pittsburgh_main_img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .skyline_art_pittsburgh_main_img {
+            background-image: url('../../../assets/img/PA_PhillySkyline_Wide.svg');
+            max-width: 768px;
+            background-repeat: no-repeat;
+            background-position: 50% bottom;
+            background-size: cover;
+        }
+
+        .skyline_art_pittsburgh_ext_div {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+
+            .skyline_art_pittsburgh_ext {
+                height: 1.1px;
+                width: 100%;
+                background-color: rgb(165, 20, 130);
+                padding-bottom: 1px;
+            }
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Roboto;
+        color: #77777A;
+        padding: 14px 0px;
+
+        .copyright {
+            font-size: 10px;
+        }
+        
+        ul {
+            font-size: 14px;
+            padding-bottom: 16px;
+
+            li {
+                display: inline;
+                list-style: none;
+                
+                a {
+                    color: #FF7F00;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+
+            }
+
+            .seperator {
+                padding: 0px 10px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            flex-direction: row;
+            max-width: 992px;
+            margin: auto;
+
+            padding-top: 14px;
+            padding-bottom: 32px;
+
+            .padding {
+                flex: 1 0 0;
+            }
+
+            ul {
+                flex: 2 0 0;
+                text-align: center;
+                padding-bottom: 0px;
+            }
+            
+            .copyright {
+                flex: 1 0 0;
+                text-align: end;
+                padding-right: 16px;
+            }
+        }
+    }
+}

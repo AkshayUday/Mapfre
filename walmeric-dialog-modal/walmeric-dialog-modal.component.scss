@@ -1,0 +1,121 @@
+:host {
+    height: auto;
+    display: block;
+    
+    .walmeric-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 16px 0;
+
+        .vertilogo {
+            display: inline-block;
+            width: 106px;
+            height: 35.4px; // margin:8px 0 0 5px;
+            margin: 0px;
+        }
+
+        .right-section {
+            display: inline-block;
+        }
+    }
+
+    .card-container {
+        $container-padding: 24px;
+
+        padding: 0 $container-padding 40px;
+
+        .card-subtitle {
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.6);
+            font-family: Roboto;
+            font-size: 12.12px;
+            letter-spacing: 2px;
+            line-height: 16px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .call-now-button-wrapper {
+            padding: 24px 16px;
+            .primary-button {
+                width: 240px;
+                margin: 0px;
+            }
+
+            a.drp-phone {
+                text-decoration: none;
+                font-family: Roboto;
+                font-size: 14px;
+                font-weight: 500;
+                outline: none;
+                color: #FFFFFF;
+                letter-spacing: 1.25px;
+                line-height: 16px;
+                text-align: center;
+            }
+        }        
+
+        .call-verti {
+            color: #777770;
+            font-size: 18.2px;
+            font-weight: 500;
+            color: #8B1863;
+            letter-spacing: 0.15px;
+            line-height: 24px;
+            margin: 0em 0 0.5em;
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            mat-form-field {
+                width: 100%;
+            }
+            .walmeric-input {
+                height: 56px; // padding: 0 10px;
+                border: 1px solid rgba(118, 119, 122, 0.87);
+                border-radius: 4px;
+                width: 98%; // margin: 0.4em 0;
+                padding-left: 4%;
+                color: #000000;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 0.15px;                
+                box-sizing: border-box;
+            }
+            .callme-btn {
+                display: block;
+                margin: 40px auto 0;
+                width: 200px; // border: none;
+                border: 1px solid #FF7F00; // border-radius: 4px;
+                background-color: #ffffff;
+                color: #FF7F00;
+                cursor: pointer;
+                height: 48px;
+                border-radius: 24px;
+                line-height: 48px;
+
+                @media all and (min-width: 376px) {
+                    width: 240px;
+                }
+            
+                &.disabled {
+                    color: rgba(0, 0, 0, 0.38);
+                    pointer-events: none;
+                    border: 1px solid rgba(0, 0, 0, 0.12);
+                }
+            
+                &:hover {
+                    background-color: rgba(255, 161, 0, 0.1);
+                }
+            }   
+        }
+    }
+}

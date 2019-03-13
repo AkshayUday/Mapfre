@@ -1,0 +1,21 @@
+<mat-toolbar class="header-container">
+  <mat-toolbar-row class="logo-inline">
+    <a href="https://www.verti.com/" class="vertilogo" target="_blank">
+      <img src="./assets/img/DkBgrnd.svg" alt="Verti">
+    </a>
+    <!-- <ng-container *ngIf="homePage">
+      <div class="pipe" *ngIf="!noLogoSource"></div>
+      <div href="#" [ngClass]="{'comparedotcom': ifCompVisible, 'everquote': ifQuoteVisible }" *ngIf="!noLogoSource">
+        <img [src]='logoPath' [alt]="Verti">
+      </div>
+    </ng-container> -->
+
+    <div class="right-section orange-theme">
+      <button mat-stroked-button color="primary" class="" (click)="openDialog()">
+        <mat-icon>phone</mat-icon>
+        CONTACT
+      </button>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>

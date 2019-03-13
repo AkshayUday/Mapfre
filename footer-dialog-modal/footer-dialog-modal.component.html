@@ -1,0 +1,17 @@
+<section class="footer-modal-container">
+  <div class="fixed-content">
+    <mat-card-title class="card-title" [innerText]="title"></mat-card-title>
+    <div class="right-section orange-theme">
+      <mat-icon color="primary" (click)="onIconClick()">close</mat-icon>
+    </div>
+  </div>
+  <div class="container middle-container card-container">
+    <iframe style="color: #777770; font-family: Roboto; font-size: 14px; letter-spacing: 0.5px;line-height: 20px;" src="https://www.verti.com/quote/terms/"
+      width="100%" height="100%" *ngIf="termsofuse"></iframe>
+    <iframe style="color: #777770; font-family: Roboto; font-size: 14px; letter-spacing: 0.5px;line-height: 20px;" src="https://www.verti.com/quote/privacy/"
+      width="100%" height="100%" *ngIf="security"></iframe>
+  </div>
+  <div class="fixed-content align-items-center">
+    <button mat-raised-button class="primary-button" (click)="onIconClick()">CLOSE</button>
+  </div>
+</section>

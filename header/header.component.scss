@@ -1,0 +1,146 @@
+.material-icons {
+    vertical-align: middle; // padding-right:5px;
+    font-size: 20px;
+}
+
+.logo-inline {
+    display: flex; // padding: 10px 8px;
+    align-items: center;
+    div {
+        display: inline;
+    }
+    .pipe {
+        width: 1px;
+        height: 40px;
+        background: #979797;
+        margin: 4px 10px 0;
+    }
+    .vertilogo {
+        width: 106px;
+        height: 35.4px;
+    }
+    .comparedotcom {
+       width: 190px;
+       //height: 51px;
+       margin-top: 0px;
+        
+    }
+    .everquote{
+        //height: 39.86px;
+        width: 131.59px;
+    }
+   
+    .vertilogo img {
+        width: 100%;
+    }
+    .comparedotcom img, .everquote img {
+        width: 100%;
+        //vertical-align: -webkit-baseline-middle;
+    }
+    
+}
+
+.mat-toolbar {
+    background: #fff;
+    position: relative;
+    padding: 4px 0;
+}
+
+.right-section {
+    position: absolute;
+    right: 16px;
+    button.mat-primary {
+        width: 130px;
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 1.25px;
+        line-height: 48px;
+        height: 48px;
+        border-radius: 24px;
+        margin-top: 1px;
+        .mat-icon {
+            height: 20px;
+            width: 20px;
+            margin-right: 2px;
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width:554px) {
+    .header-btn {
+        padding: 0.150rem;
+    }
+    .logo-inline {
+        .vertilogo {
+            width: 106px;
+            height: 35.4px;
+        }
+        .comparedotcom {
+            width: 176px;
+            margin-top: 0px;
+            //height: 47.2px;
+           
+        }
+        .everquote{
+            //height: 39.86px;
+            width: 131.59px;
+        }
+    }
+}
+
+// @media only screen and (min-width: 320px) and (max-width:599px) {
+//     .mat-toolbar {
+//         padding: 4px 0;
+//     }
+// }
+
+@media only screen and (max-width: 767px) {
+    // .right-section {
+    //     top: 6px;
+    // }
+    .comparedotcom {
+        margin-top: 2px;
+    }
+    .everquote{
+        margin-left: 6px;
+    }
+    // .container {
+    //     height: 36px;
+    //     width: 130px;
+    //     border: 1px solid #FF7F00;
+    //     border-radius: 24px;
+    //     background-color: rgba(98,2,238,0);
+    // }
+    .right-section {
+        // position: absolute;
+        // right: 16px;
+        top: 13px;
+        button.mat-primary {
+            height: 36px;
+            width: 130px;
+            line-height: 36px;
+        }
+    }
+    // .mat-toolbar-multiple-rows{
+    //     min-height: 56px;
+    // }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .right-section {
+        top: 11px;
+    }
+    .comparedotcom {
+        margin-top: 7px;
+    }
+    .everquote{
+        margin-left: 6px;
+    }
+}
+
+// material css
+.mat-toolbar {
+    background: #fff;
+    position: relative;
+}
