@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Free Car Insurance Quotes in Pennsylvania - Verti Insurance</title>
+  <base href="/car-insurance">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <style>
+    #animation_container {
+      position: fixed;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 99;
+    }
+  </style>
+  <script>
+      dataLayer = [];
+    </script>
+  <!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MB55QXX');
+</script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" id="ensightenTag"></script>
+  <script>
+    function initDelio() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://t.womtp.com/slider/c/delio-lm/dfi/init.js';
+        var head = document.getElementsByTagName('head')[0];
+
+        head.appendChild(script);
+
+        window.idTagDelio = '29842f94d414949bf95fb2e6109142cfef1fb2a78114c2c536a36bf5a65b953a265ff973d9a095e8dd4155d7d5f81f13cf8ee69616bc213dc8eccc83952860c8de01f6ae48d9d7e4506e4d981f1a7d3798627f29920a7b3ac9b96a709c86b9667987f400f2b7fecb38d60b61acc112ce';
+    }
+
+var delioInterval = setInterval(function () {
+    if (typeof window.getAllAngularRootElements !== 'undefined' && window.getAllAngularRootElements().length >= 1) {
+        initDelio();
+        clearInterval(delioInterval);
+    }
+}, 500);</script>
+  <script>
+    var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+
+    function init() {
+      canvas = document.getElementById("canvas");
+      anim_container = document.getElementById("animation_container");
+      dom_overlay_container = document.getElementById("dom_overlay_container");
+      var comp = AdobeAn.getComposition("F669FC7E658147EEA80AFAA748EB5F2F");
+      var lib = comp.getLibrary();
+      handleComplete({}, comp);
+    }
+
+    function handleComplete(evt, comp) {
+      //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+      var lib = comp.getLibrary();
+      var ss = comp.getSpriteSheet();
+      exportRoot = new lib.Logo_Loop();
+      stage = new lib.Stage(canvas);
+      //Registers the "tick" event listener.
+      fnStartAnimation = function () {
+        stage.addChild(exportRoot);
+        createjs.Ticker.setFPS(lib.properties.fps);
+        createjs.Ticker.addEventListener("tick", stage)
+        stage.addEventListener("tick", handleTick)
+
+        function handleTick(event) {
+          var cameraInstance = exportRoot.___camera___instance;
+          if (cameraInstance) {
+            var stageCenter = {
+              'x': lib.properties.width / 2,
+              'y': lib.properties.height / 2
+            };
+            if (cameraInstance._off != null && cameraInstance._off == true)
+              exportRoot.transformMatrix = new createjs.Matrix2D();
+            else {
+              if (cameraInstance.pinToObject !== undefined) {
+                cameraInstance.x = cameraInstance.pinToObject.x + cameraInstance.pinToObject.pinOffsetX;
+                cameraInstance.y = cameraInstance.pinToObject.y + cameraInstance.pinToObject.pinOffsetY;
+              }
+              var mat = cameraInstance.getMatrix();
+              mat.tx -= stageCenter.x;
+              mat.ty -= stageCenter.y;
+              var inverseMat = mat.invert();
+              inverseMat.prependTransform(stageCenter.x, stageCenter.y, 1, 1, 0, 0, 0, 0, 0);
+              inverseMat.appendTransform(-stageCenter.x, -stageCenter.y, 1, 1, 0, 0, 0, 0, 0);
+              exportRoot.transformMatrix = inverseMat;
+            }
+          }
+        }
+      }
+      //Code to support hidpi screens and responsive scaling.
+      function makeResponsive(isResp, respDim, isScale, scaleType) {
+        var lastW, lastH, lastS = 1;
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function resizeCanvas() {
+          var w = lib.properties.width,
+            h = lib.properties.height;
+          var iw = window.innerWidth,
+            ih = window.innerHeight;
+          var pRatio = window.devicePixelRatio || 1,
+            xRatio = iw / w,
+            yRatio = ih / h,
+            sRatio = 1;
+          if (isResp) {
+            if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
+              sRatio = lastS;
+            } else if (!isScale) {
+              if (iw < w || ih < h)
+                sRatio = Math.min(xRatio, yRatio);
+            } else if (scaleType == 1) {
+              sRatio = Math.min(xRatio, yRatio);
+            } else if (scaleType == 2) {
+              sRatio = Math.max(xRatio, yRatio);
+            }
+          }
+          canvas.width = w * pRatio * sRatio;
+          canvas.height = h * pRatio * sRatio;
+          canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
+          canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
+          stage.scaleX = pRatio * sRatio;
+          stage.scaleY = pRatio * sRatio;
+          lastW = iw;
+          lastH = ih;
+          lastS = sRatio;
+          stage.tickOnUpdate = false;
+          stage.update();
+          stage.tickOnUpdate = true;
+        }
+      }
+      makeResponsive(true, 'both', true, 1);
+      AdobeAn.compositionLoaded(lib.properties.id);
+      fnStartAnimation();
+    }
+
+  </script>
+</head>
+
+<!-- <body>
+  <verti-root></verti-root>
+</body> -->
+
+<body onload="init();">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB55QXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="animation_container" style="width:750px; height:1344px">
+    <canvas id="canvas" width="750" height="1344" style="position: fixed; display: block;"></canvas>
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:750px; height:1344px; position: absolute; left: 0px; top: 0px; display: block;">
+    </div>
+  </div>
+  <verti-root></verti-root>
+</body>
+
+</html>

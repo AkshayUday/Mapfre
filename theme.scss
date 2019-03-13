@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+@import './assets/styles/themes/verti-orange.scss';
+@import 'assets/styles/themes/verti-purple.scss';
+@include mat-core();
+
+// for orange theme
+$orange-dk: mat-palette($vt-vertiorange,500);
+$orange-lt:  mat-palette($vt-vertiorange,300);
+
+$orange-theme: mat-light-theme($orange-dk, $orange-lt);
+.orange-theme {
+  @include angular-material-theme($orange-theme);
+}
+
+// for purple theme
+$purple-dk: mat-palette($vt-vertipurple,800);
+// $purple-lt:  mat-palette($vt-vertipurple,300);
+$purple-lt:    mat-palette($vt-vertipurple,500);
+
+$purple-theme: mat-light-theme($purple-dk, $purple-lt);
+.purple-theme {
+  @include angular-material-theme($purple-theme);
+}
